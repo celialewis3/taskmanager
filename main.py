@@ -26,7 +26,6 @@ def main():
       if response[0] == "F" or response[0] == "f":
         cur_task = response[2:]
         tm.finishTask(cur_task)
-        print("You've earned 10XP!")
         tm.displayTasks()
       else:
         tm.displayCompletedTasks()

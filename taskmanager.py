@@ -49,6 +49,9 @@ class TaskManager:
         return len(self.task_list) > 0
 
     def finishTask(self, taskName):
-        self.task_list.remove([taskName, 'incomplete'])
-        taskTime = datetime.datetime.now().strftime("%m/%d/%Y %I:%M:%S")
-        self.completed_tasks.append([taskName, 'complete', taskTime])
+        try:
+            self.task_list.remove([taskName, 'incomplete'])
+            taskTime = datetime.datetime.now().strftime("%m/%d/%Y %I:%M:%S")
+            self.completed_tasks.append([taskName, 'complete', taskTime])
+        except:
+            print("That task name isn't on the list, try again.")
