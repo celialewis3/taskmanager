@@ -20,8 +20,12 @@ class TaskManager:
         doneTasks = False
         while (doneTasks == False):
             task = input()
-            if task == "Done" or task == "done":
+            if (task == "Done" or task == "done") and len(self.task_list) == 0:
+                print("Please enter at least one task.")
+            elif task == "Done" or task == "done":
                 doneTasks = True
+            elif task == " " or task == "":
+                pass
             else:
                 self.task_list.append([task, 'incomplete'])
 
